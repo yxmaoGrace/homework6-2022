@@ -47,21 +47,21 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute the Video");
 	if (video.muted == false) {
-		this.innerHTML = "Mute";
 		video.muted = true;
-		console.log("Muted the Video"); }
+		console.log("Muted the Video");
+		this.innerHTML = "Unmute"; }
 	else {
-		this.innerHTML = "Unmute";
 		video.muted = false;
-		console.log("Unmuted the Video"); };
+		console.log("Unmuted the Video");
+		this.innerHTML = "Mute"; };
 })
 
 // Set up the volume slider
 document.querySelector("#slider").addEventListener("click", function() {
 	console.log("Changing the Volume");
-	video.volume = this.value /100;
-	document.querySelector("#volume").innerHTML=video.volume *100 +"%";
-	console.log("Current Volume is", video.volume);
+	console.log(this.value)
+	video.volume = this.value/100
+	document.querySelector("#volume").innerHTML = video.volume*100 + "%";
 })
 
 // Use oldSchool class elements
